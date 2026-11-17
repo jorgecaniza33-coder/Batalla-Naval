@@ -23,7 +23,7 @@ Modos de juego: **local** (contra la CPU) y **en red** (Jugador 1 vs Jugador 2 p
 ## Requisitos y ejecución
 
 - Python 3.8 o superior con `tkinter` (viene incluido en Python para Windows y Mac).
-- En Linux (Debian/Ubuntu) puede faltar: `sudo apt install python3-tk`.
+- En Linux (Debian/Ubuntu) puede faltar: `                          `.
 - No hay que instalar librerías externas.
 
 ```bash
@@ -36,7 +36,7 @@ python juego.py
 2. El Jugador 2 elige la opción 3 e ingresa esa IP y el puerto.
 3. Al conectarse, se abre la ventana del juego en ambas computadoras.
 
-Para probar en una sola computadora, usa dos terminales y la IP `127.0.0.1`. Si el firewall bloquea la conexión, hay que permitir Python en el puerto elegido.
+Para probar en una sola computadora, usa dos terminales y la IP por ejemplo`127.0.0.1`. Si el firewall bloquea la conexión, hay que permitir Python en el puerto elegido.
 
 ## Cómo se juega
 
@@ -47,9 +47,9 @@ Para probar en una sola computadora, usa dos terminales y la IP `127.0.0.1`. Si 
 
 ## Declaración de Autoría
 
-Este proyecto fue diseñado y desarrollado por los integrantes del equipo listados arriba como parte de la asignatura [NOMBRE DE LA ASIGNATURA], en [INSTITUCIÓN]. El código fuente es de autoría propia del equipo. Cuando se utilice material de terceros (ideas, fragmentos de código, documentación, herramientas de IA), se indicará aquí con su fuente y alcance:
+Este proyecto fue diseñado y desarrollado como parte de la asignatura Logica de Programación, en la UIDE (Universidad Internacional del Ecuador). El código fuente es de autoría propia del equipo. Cuando se utilice material de terceros (ideas, fragmentos de código, documentación, herramientas de IA), se indicará aquí con su fuente y alcance:
 
-- [Completar si aplica: por ejemplo, "Se usó un asistente de IA como apoyo para la estructura inicial del código; el equipo revisó, probó y adaptó el resultado."]
+Se usó un asistente de IA como apoyo para la estructura del código; el equipo revisó, probó y adaptó el resultado.
 
 ## Licenciamiento Open Source
 
