@@ -67,6 +67,6 @@ Todas son parte de la biblioteca estándar de Python.
 | `json` | Formato de los mensajes de red | PSF License |
 | `random` | Colocación aleatoria de barcos de la CPU | PSF License |
 | `string` | Letras de las filas del tablero | PSF License |
-| `Claude` | Ayuda en la estructuración del código y solución de problemas generales ()
+| `Claude` | Ayuda en la estructuración del código y solución de problemas generales
 
 Python se distribuye bajo la [PSF License](https://docs.python.org/3/license.html), una licencia permisiva compatible con la licencia MIT. El proyecto no depende de librerías externas.
