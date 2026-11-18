@@ -23,7 +23,7 @@ Modos de juego: **local** (contra la CPU) y **en red** (Jugador 1 vs Jugador 2 p
 ## Requisitos y ejecución
 
 - Python 3.8 o superior con `tkinter` (viene incluido en Python para Windows y Mac).
-- En Linux (Debian/Ubuntu) puede faltar: `                          `.
+- En Linux (Debian/Ubuntu) puede faltar: `sudo apt install python3-tk`.
 - No hay que instalar librerías externas.
 
 ```bash
