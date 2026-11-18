@@ -15,7 +15,7 @@ Modos de juego: **local** (contra la CPU) y **en red** (Jugador 1 vs Jugador 2 p
 |- client.py       #Conexión del Jugador 2 mediante IP y puerto
 |- game_logic.py   #Tableros 10x10, validación de barcos/disparos, CPU y protocolo de red
 |- interfaz.py     #Ventana gráfica (tkinter): colocación de barcos y batalla
-|- docs/           #Diagramas actualizados (UML, flujo, etc.)
+|- Diagramas/           #Diagramas actualizados (UML, flujo, etc.)
 |- BITACORA_CONFLICTOS.md
 |- LICENSE
 |- README.md
