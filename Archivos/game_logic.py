@@ -212,36 +212,3 @@ def jugar_local():
     rival.colocar_flota_aleatoria()
     mis_disparos = Seguimiento()
     cpu = CPU()
-
-    while True:
-        mostrar_tableros(tu_flota, mis_disparos)
-
-        # Tu turno
-        texto = input("Tu disparo (ej. B5): ")
-        coord = parsear_coordenada(texto)
-        if coord is None:
-            print("Coordenada inválida, intenta otra vez")
-            continue
-        fila, col = coord
-        if mis_disparos.ya_disparado(fila, col):
-            print("Ya disparaste ahí, elige otra casilla")
-            continue
-
-        resultado, barco = rival.recibir_disparo(fila, col)
-        mis_disparos.registrar(fila, col, resultado)
-        print("Resultado:", resultado)
-        if rival.flota_hundida():
-            print("¡Ganaste!")
-            break
-
-        # Turno de la CPU
-        f, c = cpu.elegir()
-        resultado, barco = tu_flota.recibir_disparo(f, c)
-        cpu.informar(f, c, resultado)
-        print("La CPU disparó a", nombre_coordenada(f, c), "->", resultado)
-        if tu_flota.flota_hundida():
-            print("Perdiste")
-            break
-
-
-jugar_local()
