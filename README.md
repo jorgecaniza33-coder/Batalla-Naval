@@ -10,7 +10,7 @@ Juego de Batalla Naval en Python que se juega en la terminal. Esta primera entre
 |---|---|
 | Lógica del juego (`game_logic.py`) | Lista |
 | Modo local contra la CPU (`juego.py`) | Lista |
-| Modo en red (`server.py`, `client.py`) | Pendiente (1 de diciembre). La clase `Conexion` ya está en `game_logic.py` |
+| Modo en red (`server.py`, `client.py`) | Lista |
 | Interfaz gráfica | Pendiente (1 de diciembre) |
 | Emoji de fuego al dañar un barco | Pendiente (pedido de un profesor) |
 | Sonidos: agua al fallar, explosión o golpe metálico al acertar | Pendiente (pedido de un profesor) |
@@ -51,7 +51,7 @@ ProyectoJuego/
 | Archivo | Autor(es) |
 |---|---|
 | `game_logic.py` | José Cañizares, con la ayuda de Claude |
-| `juego.py` | José Cañizares |
+| `juego.py` | José Cañizares, con la ayuda de Claude |
 | `server.py` y `client.py` | César Alcocer |
 | Diagrama arquitectónico | José Cañizares |
 | Diagrama funcional | Víctor Paez |
@@ -80,8 +80,9 @@ Si en la siguiente etapa se agrega alguna librería externa (por ejemplo, para l
 **Uso de inteligencia artificial:** se usó Claude (Anthropic) en este proyecto para:
 
 - Explicar su funcionamiento y guiar su reescritura en lecciones paso a paso, en las que Claude propuso los fragmentos de código y José Cañizares los escribió, probó y ajustó.
+- Uso de `sockets` para la creación de `server.py` y `client.py`
 
-**Decisiones del equipo:** el equipo decidió usar IA para la lógica del juego, y decidió incorporar los cambios pedidos por un profesor (emoji de fuego al dañar un barco y sonidos al disparar).
+**Decisiones del equipo:** el equipo decidió usar IA para la creación del juego, y decidió incorporar los cambios pedidos por un profesor (emoji de fuego al dañar un barco y sonidos al disparar).
 **Recursos visuales y de audio:** ninguno por ahora (el juego es de texto).
 
 ## Bitácora de gestión de conflictos
