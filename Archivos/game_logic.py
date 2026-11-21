@@ -181,10 +181,6 @@ class CPU:
                 if vecino in self.disponibles:
                     self.objetivos.append(vecino)
 
-mi_tablero = Tablero()
-rival_tablero  = Tablero()
-# Ayuda a crear la tabla individual para cada jugador
-
 def mostrar_tableros(propio, seguimiento):
     cabecera = "   "
     
