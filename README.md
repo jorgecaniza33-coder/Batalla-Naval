@@ -1,72 +1,89 @@
-# Batalla Naval (Python)
+# Batalla Naval
 
-Juego de Batalla Naval en tablero de 10x10. El menú y la conexión de red (IP y puerto) se manejan por **terminal**, y la partida se juega en una **ventana gráfica** (tkinter) donde cada jugador coloca sus barcos con el mouse y dispara haciendo clic.
+Juego de Batalla Naval en Python que se juega en la terminal. Esta primera entrega (Fase 3) incluye el **modo local** (jugador contra la CPU). El modo en red (servidor y cliente por sockets TCP) y la interfaz gráfica están previstos para la siguiente etapa (1 de diciembre).
 
-Modos de juego: **local** (contra la CPU) y **en red** (Jugador 1 vs Jugador 2 por TCP).
+**Equipo:** César Alcocer, Víctor Páez y José Cañizares.
 
-## Equipo
- | Victor Páez |
- | Cesar Alcocer |
- | José Cañizares |
+## Estado del proyecto
 
-## Estructura del proyecto
-|- juego.py        #Punto de entrada: menú por terminal (modo local o en red)
-|- server.py       #Socket servidor TCP del Jugador 1
-|- client.py       #Conexión del Jugador 2 mediante IP y puerto
-|- game_logic.py   #Tableros 10x10, validación de barcos/disparos, CPU y protocolo de red
-|- interfaz.py     #Ventana gráfica (tkinter): colocación de barcos y batalla
-|- Diagramas/           #Diagramas actualizados (UML, flujo, etc.)
-|- BITACORA_CONFLICTOS.md
-|- LICENSE
-|- README.md
+| Parte | Estado |
+|---|---|
+| Lógica del juego (`game_logic.py`) | Lista |
+| Modo local contra la CPU (`juego.py`) | Lista |
+| Modo en red (`server.py`, `client.py`) | Pendiente (1 de diciembre). La clase `Conexion` ya está en `game_logic.py` |
+| Interfaz gráfica | Pendiente (1 de diciembre) |
+| Emoji de fuego al dañar un barco | Pendiente (pedido de un profesor) |
+| Sonidos: agua al fallar, explosión o golpe metálico al acertar | Pendiente (pedido de un profesor) |
 
-## Requisitos y ejecución
+## Cómo ejecutarlo
 
-- Python 3.8 o superior con `tkinter` (viene incluido en Python para Windows y Mac).
-- En Linux (Debian/Ubuntu) puede faltar: `sudo apt install python3-tk`.
-- No hay que instalar librerías externas.
+Requiere Python 3.6 o superior. No hay que instalar nada extra.
 
-```bash
+```
 python juego.py
 ```
 
-**Modo en red (dos computadoras en la misma red):**
-
-1. El Jugador 1 elige la opción 2 en la terminal. El programa muestra su IP y el puerto (por defecto 5000).
-2. El Jugador 2 elige la opción 3 e ingresa esa IP y el puerto.
-3. Al conectarse, se abre la ventana del juego en ambas computadoras.
-
-Para probar en una sola computadora, usa dos terminales y la IP por ejemplo`127.0.0.1`. Si el firewall bloquea la conexión, hay que permitir Python en el puerto elegido.
-
 ## Cómo se juega
 
-1. **Colocar barcos:** haz clic en tu tablero para colocar cada barco (Portaaviones 5, Acorazado 4, Crucero 3, Submarino 3, Destructor 2). Con `R` o clic derecho lo rotas; "Deshacer" quita el último y "Al azar" coloca toda la flota. Al terminar, pulsa "¡Listo!".
-2. **Batalla:** cuando ambos jugadores están listos, se dispara haciendo clic en el tablero de la derecha. El Jugador 1 empieza y los turnos se alternan.
-3. **Símbolos:** casilla roja con X = tocado, punto blanco = agua.
-4. Gana quien hunda primero toda la flota rival.
+- Cada jugador tiene una flota de 5 barcos colocada al azar: Portaaviones (5 casillas), Acorazado (4), Crucero (3), Submarino (3) y Destructor (2).
+- En tu turno escribes una coordenada: **letra de la fila (A a J) y número de la columna (1 a 10)**, por ejemplo `B5`.
+- El tablero de la izquierda es tu flota y el de la derecha son tus disparos.
+- Símbolos: `~` agua, `B` barco, `X` tocado, `O` disparo al agua.
+- Gana quien hunda primero toda la flota del rival.
 
-## Declaración de Autoría
+## Estructura del repositorio
 
-Este proyecto fue diseñado y desarrollado como parte de la asignatura Logica de Programación, en la UIDE (Universidad Internacional del Ecuador). El código fuente es de autoría propia del equipo. Cuando se utilice material de terceros (ideas, fragmentos de código, documentación, herramientas de IA), se indicará aquí con su fuente y alcance:
+```
+ProyectoJuego/
+| game_logic.py     Reglas del juego (tableros, disparos, CPU, conexión)
+| juego.py          Juego en la terminal (modo local)
+| server.py         Servidor del modo en red (pendiente)
+| client.py         Cliente del modo en red (pendiente)
+| pruebas/          Pruebas de cada parte de game_logic.py
+| LECCIONES.md      Explicación paso a paso de game_logic.py
+| BITACORA.md       Bitácora de gestión de conflictos
+| LICENSE
+| README.md
+```
 
-Se usó un asistente de IA como apoyo para la estructura del código; el equipo revisó, probó y adaptó el resultado.
+## Declaración de autoría
 
-## Licenciamiento Open Source
+| Archivo | Autor(es) |
+|---|---|
+| `game_logic.py` | José Cañizares, con la ayuda de Claude |
+| `juego.py` | José Cañizares |
+| `server.py` y `client.py` | César Alcocer |
+| Diagrama arquitectónico | José Cañizares |
+| Diagrama funcional | Víctor Paez |
+| README, LICENSE, bitácora | Todos |
 
-El código de este repositorio se distribuye bajo la **licencia MIT** (ver archivo [LICENSE](LICENSE)). Esto permite usar, copiar, modificar y distribuir el software, siempre que se conserve el aviso de copyright y la licencia.
+## Licencia
 
-### Librerías utilizadas y sus licencias
+Este proyecto se distribuye bajo la licencia **MIT** (ver el archivo `LICENSE`).
 
-Todas son parte de la biblioteca estándar de Python.
+## Librerías utilizadas y sus licencias
 
-| Librería | Uso en el proyecto | Licencia |
-|---|---|---|
-| `tkinter` | Ventana gráfica y clics del mouse (`interfaz.py`) | PSF License |
-| `socket` | Comunicación TCP entre jugadores (`server.py`, `client.py`) | PSF License |
-| `threading`, `queue` | Escuchar la red sin congelar la ventana (`interfaz.py`) | PSF License |
-| `json` | Formato de los mensajes de red | PSF License |
-| `random` | Colocación aleatoria de barcos de la CPU | PSF License |
-| `string` | Letras de las filas del tablero | PSF License |
-| `Claude` | Ayuda en la estructuración del código y solución de problemas generales, se usó Claude (Anthropic) para entender y explicar el código de game_logic.py.
+Por ahora solo se usa la biblioteca estándar de Python, distribuida bajo la licencia de la Python Software Foundation (PSF License).
 
-Python se distribuye bajo la [PSF License](https://docs.python.org/3/license.html), una licencia permisiva compatible con la licencia MIT. El proyecto no depende de librerías externas.
+| Librería | Para qué se usa |
+|---|---|
+| `random` | Colocar la flota al azar y barajar los disparos de la CPU |
+| `json` | Convertir los mensajes de red a texto y de vuelta |
+| `socket` | Conexión TCP del modo en red |
+
+Si en la siguiente etapa se agrega alguna librería externa (por ejemplo, para los sonidos o la interfaz), se anotará aquí con su licencia.
+
+## Créditos
+
+**Código de terceros:** la versión de referencia de `game_logic.py` fue generada por partes con ayuda de Claude. El equipo decidió generarla con IA porque aún no se habían enseñado en clase las herramientas necesarias para hacerlo.
+
+**Uso de inteligencia artificial:** se usó Claude (Anthropic) en este proyecto para:
+
+- Explicar su funcionamiento y guiar su reescritura en lecciones paso a paso, en las que Claude propuso los fragmentos de código y José Cañizares los escribió, probó y ajustó.
+
+**Decisiones del equipo:** el equipo decidió usar IA para la lógica del juego, y decidió incorporar los cambios pedidos por un profesor (emoji de fuego al dañar un barco y sonidos al disparar).
+**Recursos visuales y de audio:** ninguno por ahora (el juego es de texto).
+
+## Bitácora de gestión de conflictos
+
+Ver `BITACORA_CONFLICTOS.md`.
