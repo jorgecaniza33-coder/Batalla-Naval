@@ -53,8 +53,8 @@ ProyectoJuego/
 | `game_logic.py` | José Cañizares, con la ayuda de Claude |
 | `juego.py` | José Cañizares, con la ayuda de Claude |
 | `server.py` y `client.py` | César Alcocer |
-| Diagrama arquitectónico | José Cañizares |
-| Diagrama funcional | Víctor Paez |
+| Diagrama arquitectónico | César Alcocer |
+| Diagramas funcionales | Víctor Paez |
 | README, LICENSE, bitácora | Todos |
 
 ## Licencia
