@@ -23,8 +23,3 @@ def iniciar_servidor(puerto=PUERTO_POR_DEFECTO, host="0.0.0.0"):
         servidor.close()
     print (f"Jugador 2 conectado desde: {direccion[0]}")
     return Conexion(sock)
-    
-
-
-        
-
