@@ -1,13 +1,10 @@
-import server
-import client
 from game_logic import (
     Tablero, Seguimiento, CPU,
     parsear_coordenada, nombre_coordenada, mostrar_tableros,
 )
-print("juego.py cargó bien")
-#Verifica que la comunicacion de archivos funcione
 
 def pedir_disparo(seguimiento):
+    # Pide en dónde realizar el disparo
     while True:
         texto = input("Tu disparo (ej. B5): ")
         coord = parsear_coordenada(texto)
@@ -19,20 +16,20 @@ def pedir_disparo(seguimiento):
             print("Ya disparaste ahí, elige otra casilla")
             continue
         return fila, col
-#Pide en donde realizar el disparo
 
 def jugar_local():
+    # Prepara la partida (tableros y barcos de manera aleatoria)
     tu_flota = Tablero()
     tu_flota.colocar_flota_aleatoria()
     rival = Tablero()
     rival.colocar_flota_aleatoria()
     mis_disparos = Seguimiento()
     cpu = CPU()
-#Prepara la partida (Tableros, y barcos de manera aleatoria)
 
     while True:
         mostrar_tableros(tu_flota, mis_disparos)
-        #Tu Turno
+
+        # Tu turno
         fila, col = pedir_disparo(mis_disparos)
         resultado, barco = rival.recibir_disparo(fila, col)
         mis_disparos.registrar(fila, col, resultado)
@@ -40,7 +37,8 @@ def jugar_local():
         if rival.flota_hundida():
             print("¡Ganaste!")
             break
-        #Turno de la CPU
+
+        # Turno de la CPU
         f, c = cpu.elegir()
         resultado, barco = tu_flota.recibir_disparo(f, c)
         cpu.informar(f, c, resultado)
@@ -49,6 +47,25 @@ def jugar_local():
             print("Perdiste")
             break
 
+def menu():
+    while True:
+        print("""
+1) Modo Local: Vs CPU
+2) Modo Red: Vs Jugador
+3) Salir
+""")
+        resp = input("Elige una opción: ").strip().lower()
+        if resp in ("1", "1)", "uno"):
+            print("=== MODO LOCAL ===")
+            jugar_local()
+        elif resp in ("2", "2)", "dos"):
+            print("El modo en red estará disponible próximamente.")
+        elif resp in ("3", "3)", "tres", "salir"):
+            print("¡Hasta luego!")
+            break
+        else:
+            print("Opción inválida, elige 1, 2 o 3")
+
+
 if __name__ == "__main__":
-    jugar_local()
-#Corre el juego
+    menu()
