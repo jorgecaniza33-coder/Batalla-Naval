@@ -41,6 +41,8 @@ ProyectoJuego/
   | server.py         Servidor del modo en red (pendiente)
   | client.py         Cliente del modo en red (pendiente)
 | pruebas/          Pruebas de cada parte de game_logic.py
+  | game_logic.py
+  | pruebas_batalla_naval.zip (Contiene 13 pruebas del código)
 | BITACORA_CONFLICTOS.md       Bitácora de gestión de conflictos
 | LICENSE
 | README.md
@@ -54,6 +56,7 @@ ProyectoJuego/
 | `juego.py` | José Cañizares, con la ayuda de Claude |
 | `server.py` y `client.py` | César Alcocer |
 | Diagrama arquitectónico | César Alcocer |
+| `interfaz.py` | Víctor Paez |
 | Diagramas funcionales | Víctor Paez |
 | README, LICENSE, bitácora | Todos |
 
