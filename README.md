@@ -35,13 +35,13 @@ python juego.py
 
 ```
 ProyectoJuego/
-| game_logic.py     Reglas del juego (tableros, disparos, CPU, conexión)
-| juego.py          Juego en la terminal (modo local)
-| server.py         Servidor del modo en red (pendiente)
-| client.py         Cliente del modo en red (pendiente)
+| Archivos/
+  | game_logic.py     Reglas del juego (tableros, disparos, CPU, conexión)
+  | juego.py          Juego en la terminal (modo local)
+  | server.py         Servidor del modo en red (pendiente)
+  | client.py         Cliente del modo en red (pendiente)
 | pruebas/          Pruebas de cada parte de game_logic.py
-| LECCIONES.md      Explicación paso a paso de game_logic.py
-| BITACORA.md       Bitácora de gestión de conflictos
+| BITACORA_CONFLICTOS.md       Bitácora de gestión de conflictos
 | LICENSE
 | README.md
 ```
