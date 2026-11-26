@@ -20,7 +20,7 @@ Juego de Batalla Naval en Python que se juega en la terminal. Esta primera entre
 Requiere Python 3.6 o superior. No hay que instalar nada extra.
 
 ```
-python juego.py
+python Archivos/juego.py
 ```
 
 ## Cómo se juega
